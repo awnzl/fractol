@@ -6,7 +6,7 @@
 /*   By: avenzel <avenzel@student.unit.ua>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 17:02:32 by avenzel           #+#    #+#             */
-/*   Updated: 2017/03/16 20:10:14 by avenzel          ###   ########.fr       */
+/*   Updated: 2017/03/16 20:24:13 by avenzel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	check_keys(int kc, t_win *w)
 	}
 	else if (kc == 20 || kc == 21)
 	{
-		w->par = (kc == 20) ? &w->pars[2] : &w->pars[4];
+		w->par = (kc == 20) ? &w->pars[2] : &w->pars[3];
 		w->func = (kc == 20) ? &bsspix : &nfpix;
 	}
 	else if (kc == 22 || kc == 23)
