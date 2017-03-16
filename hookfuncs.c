@@ -6,7 +6,7 @@
 /*   By: avenzel <avenzel@student.unit.ua>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/13 17:02:32 by avenzel           #+#    #+#             */
-/*   Updated: 2017/03/16 19:39:44 by avenzel          ###   ########.fr       */
+/*   Updated: 2017/03/16 20:10:14 by avenzel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ void	check_keys(int kc, t_win *w)
 		w->par = (kc == 22) ? &w->pars[4] : &w->pars[5];
 		w->func = (kc == 22) ? &mn1pix : &mn2pix;
 	}
-	else if (kc == 69 || kc == 78)
-		(kc == 69) ? mouse_focus(w, 500, 400, 1.1) : mouse_focus(w, 500, 400, 0.9);
 	else if (kc == 24 || kc == 27)
 		w->par->depth += (kc == 24) ? 50 : -50;
 	else if (kc == 126 || kc == 125)
@@ -70,6 +68,11 @@ int		key_hook(int kc, t_win *w)
 		w->par->gfr += (kc == 40) ? .05 : -.05;
 	else if (kc == 37 || kc == 47)
 		w->par->bfr += (kc == 37) ? .05 : -.05;
+	else if (kc == 69 || kc == 78)
+	{
+		(kc == 78) ? mouse_focus(w, 500, 400, 1.1) :
+			mouse_focus(w, 500, 400, 0.9);
+	}
 	else
 		check_keys(kc, w);
 	put_image(w);
